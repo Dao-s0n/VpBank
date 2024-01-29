@@ -1,0 +1,59 @@
+.ant{
+    &-layout-header{
+        display: flex;
+        background-color: #fff;
+        padding: 0 5px;
+    }
+
+    &-menu{
+        width: 80%;
+    }
+    &-select{
+        width: 100%;
+    }
+
+    &-select-single:not(.ant-select-customize-input)
+&-select-selector {
+        height: 37.88px;
+        width: 100%;
+        border: none;
+    }
+
+    &-pagination-item{
+        border: none;
+    }
+    &-pagination-prev &-pagination-item-link, &-pagination-next &-pagination-item-link
+    {
+        border: none;
+    }
+    
+     &-picker{
+        border: none;
+     }
+     &-menu-horizontal > &-menu-item a{
+        color: var(--text-color);
+     }
+     &-menu-horizontal > &-menu-item-selected a{
+        color: var(--color-text);
+     }
+     &-menu-horizontal > &-menu-item a:hover {
+        color: var(--color-text);
+     }
+     &-menu-horizontal:not(&-menu-dark) > &-menu-item-selected::after{
+        border-bottom: 2px solid var(--color-text);
+
+     }
+     &-pagination-item-active a{
+        color: #fff !important;
+        background-color: #049c06;
+        border-radius: 3px;
+     }
+    &-pagination-item a{
+        color: var(--text-color);
+        font-weight: 400;
+    }
+     &-input:placeholder-shown{
+        border: none;
+     }
+
+}

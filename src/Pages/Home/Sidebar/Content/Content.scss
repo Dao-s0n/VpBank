@@ -1,0 +1,109 @@
+.title{
+    height: 50px;
+    background: var(--background-color);
+    color: #fff;
+    align-items: center;
+    
+
+    h2{
+        color: #fff;
+        margin: 0;
+    }
+
+}
+.icon-title{
+        margin: 0 10px;
+}
+.search{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 9px;
+}
+
+.data-search{
+    width: 232px;
+    height: 70px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+
+
+    b{
+        margin: 5px 10px;
+    }
+    input{
+        font-size: 18px;
+    }
+}
+
+
+.icon-input{
+    height: 12px;
+    width: 12px;
+    margin-top: 18px;
+    color: var(--text-color);
+}
+
+.result{
+    border: 0.5px solid var(--color-border);
+    margin-bottom: 50px;  
+    overflow-x: auto; /* Enable horizontal scrollbar when content overflows */
+    white-space: nowrap; /* Prevent line breaks for inline elements */
+    margin-left: 26px;
+    min-height: 500px;
+}
+
+.icon-result{
+    color: var(--color-text);
+    height: 10px;
+    width: 10px;
+    margin: 0 0 3px 10px;
+}
+
+.result-number{
+    padding: 10px;
+}
+
+.lookup-container {
+    overflow-x: auto; /* Enable horizontal scrollbar when content overflows */
+    white-space: nowrap; /* Prevent line breaks for inline elements */
+    min-width: 100%; /* Set a width for the container */
+  }
+
+.lookup{
+    padding: 50px 10px 0 10px;
+    margin: 0 10px;
+    min-width: 90px;
+    color: var(--text-color);
+    border-bottom: 0.5px solid var(--color-border);
+    
+}
+
+.lookup-res{
+    border-bottom: 0.5px solid var(--color-border);
+    padding:20px 15px;
+    
+}
+.lookup-item{
+    width: 138px;
+    height: 40px;
+    margin:0 10px;
+    display: inline-block;
+
+    &.text-color{
+        color: var(--text-color);
+    }
+
+    
+}
+
+
+
+.input-search{
+    width: 100%;
+    height: 37.88px;
+}
+
+.wrap{
+    margin: 0 30px;
+}

@@ -1,0 +1,18 @@
+*{
+    --background-color: linear-gradient(to right, #051f4c,#18e82a);
+    --text-color : #b4acac;
+    --color-text:rgb(80, 183, 110);
+    --color-border:#dfd9d9;
+    box-sizing: border-box;
+}
+button{
+    border: transparent;
+}
+p{
+    margin-top: 4px;
+}
+a{
+    font-size: 16px;
+    font-weight: 700;
+    color: #b4acac;
+}
