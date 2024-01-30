@@ -198,18 +198,19 @@ const columns = [
           </div>
 
 
-       
-          <div className={cx('result')}>
-          <div className={cx('result-plus')}>
-              <div>
-                  <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                  <b className={cx('result-number')}>28 kết quả</b>
-              </div>
-
-              
+       <div className="a">
+         
+            <div className={cx('result')}>
+            <div className={cx('result-plus')}>
+                <div>
+                    <FontAwesomeIcon icon={faCircle} className="icon-result"/>
+                    <b className={cx('result-number')}>28 kết quả</b>
+                </div>
+         
+            </div>
+            <Table columns={columns} dataSource={data} pagination={false}/>
           </div>
-          <Table columns={columns} dataSource={data} pagination={false}/>
-        </div>
+       </div>
         <Next/>
 
           {modavisible && (

@@ -163,13 +163,15 @@ function Tracuusodu() {
           </div>
 
 
-          <div className={cx('result')}>
-      <FontAwesomeIcon icon={faCircle} className={cx('icon-result')} />
-      <b className={cx('result-number')}>28 kết quả</b>
-      <Table dataSource={dataSource} columns={columns}
-      pagination={false}
-        />
-    </div>
+          <div className="a">
+            <div className={cx('result')}>
+                  <FontAwesomeIcon icon={faCircle} className={cx('icon-result')} />
+                  <b className={cx('result-number')}>28 kết quả</b>
+                  <Table dataSource={dataSource} columns={columns}
+                  pagination={false}
+                    />
+                </div>
+          </div>
         <Next/>
 
       </Content>

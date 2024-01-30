@@ -89,7 +89,7 @@ function Login( {setLoggeIn}) {
           </Form.Item>
 
           <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-            <Checkbox>Nhớ tôi</Checkbox>
+            <Checkbox>Lưu tài khoản</Checkbox>
           </Form.Item>
 
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

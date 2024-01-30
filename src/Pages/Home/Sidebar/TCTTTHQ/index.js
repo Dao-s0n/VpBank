@@ -166,10 +166,12 @@ function THQ() {
           </div>
 
        
-        <div className={cx('result')}>
-          <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-          <b className={cx('result-number')}>28 kết quả</b>
-          <Table columns={columns} dataSource={data}  pagination={false}/>
+        <div className="a">
+          <div className={cx('result')}>
+            <FontAwesomeIcon icon={faCircle} className="icon-result"/>
+            <b className={cx('result-number')}>28 kết quả</b>
+            <Table columns={columns} dataSource={data}  pagination={false} />
+          </div>
         </div>
         <Next/>
 

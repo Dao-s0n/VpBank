@@ -263,21 +263,21 @@ function GDG() {
 
 
        
-          <div className={cx('result')}>
-          <div className={cx('result-plus')}>
-              <div>
-                  <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                  <b className={cx('result-number')}>28 kết quả</b>
-              </div>
-
-              <button
-              onClick={() => {handleFunctionClick('Đăng kí mua CK phát hành thêm');}}
-
-              > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}
-              />Thêm mới</button>
+          <div className="a">
+            <div className={cx('result')}>
+            <div className={cx('result-plus')}>
+                <div>
+                    <FontAwesomeIcon icon={faCircle} className="icon-result"/>
+                    <b className={cx('result-number')}>28 kết quả</b>
+                </div>
+                <button
+                onClick={() => {handleFunctionClick('Đăng kí mua CK phát hành thêm');}}
+                > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}
+                />Thêm mới</button>
+            </div>
+            <Table columns={columns} dataSource={data} pagination={false}/>
+                    </div>
           </div>
-          <Table columns={columns} dataSource={data} pagination={false}/>
-        </div>
         <Next/>
 
           {modavisible && (

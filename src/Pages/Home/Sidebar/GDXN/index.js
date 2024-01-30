@@ -217,24 +217,25 @@ function GDXN() {
 
 
        
-          <div className={cx('result')}>
-          <div className={cx('result-plus')}>
-              <div>
-                  <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                  <b className={cx('result-number')}>28 kết quả</b>
-              </div>
-
-              <button
-              onClick={() => {handleFunctionClick('Thêm mới');handleClick('Thêm')}}
-              > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}/>Thêm mới</button>
+          <div className="a">
+            <div className={cx('result')}>
+            <div className={cx('result-plus')}>
+                <div>
+                    <FontAwesomeIcon icon={faCircle} className="icon-result"/>
+                    <b className={cx('result-number')}>28 kết quả</b>
+                </div>
+                <button
+                onClick={() => {handleFunctionClick('Thêm mới');handleClick('Thêm')}}
+                > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}/>Thêm mới</button>
+            </div>
+            <Table
+                  className={cx('lookup-container')}
+                  columns={columns}
+                  dataSource={data}
+                  pagination={false}
+                />
+                    </div>
           </div>
-          <Table
-      className={cx('lookup-container')}
-      columns={columns}
-      dataSource={data}
-      pagination={false}
-    />
-        </div>
         <Next/>
 
         {modavisible && (
