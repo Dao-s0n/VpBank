@@ -1,5 +1,4 @@
- import classNames from "classnames/bind";
- import styles from './Header.scss'
+
  import Sidebar from "../Sidebar";
  import TippyAdmin from "@tippyjs/react";
  import {  Layout} from 'antd';
@@ -8,20 +7,19 @@ import { faQrcode, faRightFromBracket, faUser } from "@fortawesome/free-solid-sv
 import {  forwardRef } from "react";
 import 'antd/dist/antd.css'
 
- const cx = classNames.bind(styles)
  function HeaderComponent() {
         
     const SelectAdmin = forwardRef((props,ref) => (
-        <div className={cx('modul-admin')} tabIndex='-1' ref={ref}{...props}>
-            <div className={cx('tile-modul')}>
+        <div className='modul-admin' tabIndex='-1' ref={ref}{...props}>
+            <div className='tile-modul'>
                 <FontAwesomeIcon icon={faUser}/>
                 <p>Thông tin</p>
             </div>
-            <div className={cx('tile-modul')}>
+            <div className='tile-modul'>
             <FontAwesomeIcon icon={faQrcode}/>
                 <p>Nhận Active code</p>
             </div>
-            <div className={cx('tile-modul')}>
+            <div className='tile-modul'>
                 <FontAwesomeIcon icon={faRightFromBracket}/>
                 <p>Đăng xuất</p>
             </div>
@@ -33,12 +31,12 @@ import 'antd/dist/antd.css'
 
         <Header>
         <div className="logo-header" >
-            <img src='logo2-02.jpg'/>
+            <img src='logo2-02.jpg' alt=""/>
             </div>
         <Sidebar />
         <div className="infor">
             <div className="language">
-            <img src="Flag_of_Vietnam.svg.png"/>
+            <img src="Flag_of_Vietnam.svg.png" alt=""/>
             <p>Việt Nam</p>
             </div>
             
@@ -49,11 +47,11 @@ import 'antd/dist/antd.css'
                 trigger="click"
                     content={<SelectAdmin/>}>
                         <div className="list-modul">
-                            <div className={cx('admin-name')}>
+                            <div className='admin-name'>
                                 <p>Quản trị viên</p>
                                 <h5>Admin</h5>
                             </div>
-                            <div className={cx('avatar')}>
+                            <div className='avatar'>
                                 <img src="chuM-1463649095_1463649113.jpg" alt=""/>
                             </div>
                         </div>

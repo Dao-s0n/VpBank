@@ -2,14 +2,11 @@ import {faCircle, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {Table} from 'antd'
-import classNames from "classnames/bind";
-import styles from './Content.scss'
 import Next from "../NextPage";
 import { Content, Header } from "antd/lib/layout/layout";
 import { Select, DatePicker } from "antd";
 import Button from "../Button";
 
-const cx = classNames.bind(styles)
 
 function Tracuusodu() {
 
@@ -126,13 +123,13 @@ function Tracuusodu() {
   
     return (
       <Content >
-        <Header className={cx('title')}>
-          <FontAwesomeIcon icon={faWallet} className={cx('icon-title')}/>
+        <Header className='title'>
+          <FontAwesomeIcon icon={faWallet} className='icon-title'/>
           <h2>Tra cứu số dư</h2>
         </Header>
         
-          <div className={cx('search')}>
-          <div className={cx('data-search')}>
+          <div className='search'>
+          <div className='data-search'>
         <b>Tài khoản lưu ký chứng khoán</b>
         <div >
           <Select
@@ -151,7 +148,7 @@ function Tracuusodu() {
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Ngày đăng ký</b>
         <DatePicker />
       </div>
@@ -164,9 +161,9 @@ function Tracuusodu() {
 
 
           <div className="a">
-            <div className={cx('result')}>
-                  <FontAwesomeIcon icon={faCircle} className={cx('icon-result')} />
-                  <b className={cx('result-number')}>28 kết quả</b>
+            <div className='result'>
+                  <FontAwesomeIcon icon={faCircle} className='icon-result' />
+                  <b className='result-number'>28 kết quả</b>
                   <Table dataSource={dataSource} columns={columns}
                   pagination={false}
                     />

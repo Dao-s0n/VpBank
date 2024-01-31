@@ -1,8 +1,6 @@
 import { faCircle, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import classNames from "classnames/bind";
-import styles from './TCSL.scss'
 import Button from "../Button";
 import Next from "../NextPage";
 import { Content, Header } from "antd/lib/layout/layout";
@@ -11,7 +9,6 @@ import { Input, DatePicker, Select, Table, Space } from 'antd';
 const { Option } = Select;
 
 
-const cx = classNames.bind(styles)
 
 function Tracuusolenh() {
 
@@ -36,7 +33,7 @@ function Tracuusolenh() {
       dataIndex: 'status',
       key: 'status',
       render: (text) => (
-        <Space className={cx('icon-lookup', { 'wait': text === 'chờ duyệt', 'refuse': text === 'Từ chối' })}>
+        <Space className={`icon-lookup ${text === 'Chờ duyệt' ? 'wait' : ''} ${text === 'Từ chối' ? 'refuse' : ''}`}        >
           <FontAwesomeIcon icon={faCircle} />
           {text}
         </Space>
@@ -112,7 +109,7 @@ function Tracuusolenh() {
       account: 'VSSB000018',
       orderNumber: 'ASA',
       transactionDate: '0',
-      status: 'chờ duyệt',
+      status: 'Chờ duyệt',
       stockCode: '0',
       orderType: '0',
       tradingCycle: '0',
@@ -144,15 +141,15 @@ function Tracuusolenh() {
   
     return (
       <Content >
-        <Header className={cx('title')}>
-          <FontAwesomeIcon icon={faFileLines} className={cx('icon-title')}/>
+        <Header className='title'>
+          <FontAwesomeIcon icon={faFileLines} className='icon-title'/>
           <h2>Tra cứu sổ lệnh</h2>
         </Header>
         
-          <div className={cx('search')}>
-          <div className={cx('data-search')}>
+          <div className='search'>
+          <div className='data-search'>
               <b>Tài khoản lưu ký chứng khoán</b>
-              <div className={cx('input-search')}>
+              <div className='input-search'>
                 <Select
                   className="input-search"
                   showSearch
@@ -169,9 +166,9 @@ function Tracuusolenh() {
               </div>
             </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Mã CK</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                     <Select
                   className="input-search"
                   showSearch
@@ -188,21 +185,21 @@ function Tracuusolenh() {
                     </div>
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Số hiệu lệnh</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                       <Input placeholder="Chọn tài khoản"  className="border-input"/>
                     </div>
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Ngày giao dịch</b>
                     <DatePicker />
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Trạng thái</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                     <Select
                   className="input-search"
                   showSearch
@@ -219,9 +216,9 @@ function Tracuusolenh() {
                     </div>
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Loại lệnh</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                     <Select
                   className="input-search"
                   showSearch
@@ -238,9 +235,9 @@ function Tracuusolenh() {
                     </div>
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Mã CTCK đặt lệnh</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                       <Input placeholder="Chọn tài khoản" className="border-input"/>
                     </div>
 </div>
@@ -254,9 +251,9 @@ function Tracuusolenh() {
 
        
           <div className="a">
-            <div className={cx('result')}>
+            <div className='result'>
             <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-            <b className={cx('result-number')}>28 kết quả</b>
+            <b className='result-number'>28 kết quả</b>
             <Table columns={columns} dataSource={data} pagination={false}/>
                     </div>
           </div>

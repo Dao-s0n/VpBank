@@ -4,22 +4,20 @@ import React, { useState } from 'react';
 import THQ from '../TCTTTHQ';
 import TCQDH from '../TCQDH';
 import 'antd/dist/antd.css'; // Import CSS của Ant Design
-import styles from './Tracuuquyen.scss';
-import classNames from 'classnames/bind';
 import { Header } from 'antd/lib/layout/layout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import styles from 'src/components/GlobalStyle'
 
 const { Item } = Menu;
-const cx = classNames.bind(styles)
 
 function Tracuuquyen() {
   const [selectLink, setSelectLink] = useState('1');
 
   return (
     <div>
-        <Header className={cx('title')}>
-          <FontAwesomeIcon icon={faStar} className={cx('icon-title')}/>
+        <Header className='title'>
+          <FontAwesomeIcon icon={faStar} className='icon-title'/>
         <h2>Tra cứu thông tin thực hiện quyền</h2>
       </Header>
       <div>

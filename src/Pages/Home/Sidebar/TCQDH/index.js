@@ -1,16 +1,13 @@
 import {  faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import classNames from "classnames/bind";
 import Button from "../Button";
 import Next from "../NextPage";
-import styles from './TCQDH.scss'
 import { Select, DatePicker, Table } from "antd";
 
 const {Option} = Select
 
 
-const cx = classNames.bind(styles)
 
 const data = [
   {
@@ -35,67 +32,67 @@ const columns = [
     title: 'Tài khoản lưu ký chứng khoán',
     dataIndex: 'taiKhoan',
     key: 'taiKhoan',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Tên khách hàng',
     dataIndex: 'tenKhachHang',
     key: 'tenKhachHang',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Mã CK',
     dataIndex: 'maCK',
     key: 'maCK',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Ngày DKCC',
     dataIndex: 'ngayDKCC',
     key: 'ngayDKCC',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Loại THQ',
     dataIndex: 'loaiTHQ',
     key: 'loaiTHQ',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Số TK tiền',
     dataIndex: 'soTKTien',
     key: 'soTKTien',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Số TK chốt quyền',
     dataIndex: 'soTKChotQuyen',
     key: 'soTKChotQuyen',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Số tiền',
     dataIndex: 'soTien',
     key: 'soTien',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Số tiền sau thuế',
     dataIndex: 'soTienSauThue',
     key: 'soTienSauThue',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'SL CK mới',
     dataIndex: 'slCKMoi',
     key: 'slCKMoi',
-    className: cx('lookup'),
+    className: 'lookup',
   },
   {
     title: 'Tiền quy đổi lẻ',
     dataIndex: 'tienQuyDoiLe',
     key: 'tienQuyDoiLe',
-    className: cx('lookup'),
+    className: 'lookup',
   },
 ];
 
@@ -110,13 +107,13 @@ function TCQDH() {
         
           
         
-        <div className={cx('search')}>
+        <div className='search'>
         
           
         
-        <div className={cx('data-search')}>
+        <div className='data-search'>
         <b>Mã CK</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
           <Select
           className="input-search"
             showSearch
@@ -133,14 +130,14 @@ function TCQDH() {
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Ngày DKCC</b>
         <DatePicker />
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Loại THQ</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
           <Select
           className="input-search"
             showSearch
@@ -166,9 +163,9 @@ function TCQDH() {
 
        
         <div className="a">
-          <div className={cx('result')}>
+          <div className='result'>
             <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-            <b className={cx('result-number')}>28 kết quả</b>
+            <b className='result-number'>28 kết quả</b>
             <Table columns={columns} dataSource={data}  pagination={false}/>
           </div>
         </div>

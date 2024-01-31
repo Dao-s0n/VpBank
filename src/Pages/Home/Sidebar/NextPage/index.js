@@ -1,10 +1,7 @@
 
 import React, { useState } from 'react';
 import { Select, Pagination } from 'antd';
-import classNames from 'classnames/bind';
-import styles from './NextPage.scss';
 
-const cx = classNames.bind(styles);
 const { Option } = Select;
 
 function Next() {
@@ -30,7 +27,7 @@ function Next() {
   };
 
   return (
-    <div className={cx('next-page')}>
+    <div className='next-page'>
       <p>Hiển thị:</p>
       <Select value={selected} onChange={handleSelectChange} className='page'>
         {renderSelectOptions()}

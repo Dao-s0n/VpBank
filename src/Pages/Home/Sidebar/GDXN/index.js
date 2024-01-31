@@ -1,14 +1,11 @@
 import {  faCircle, faDownload, faEye, faFileLines, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import classNames from "classnames/bind";
 import Button from "../Button";
 import Next from "../NextPage";
-import styles from './GDXN.scss'
 import { Input,DatePicker, Select, Space, Table,Upload } from "antd";
 
 const {Option} = Select
-const cx = classNames.bind(styles)
 
 function GDXN() {
 
@@ -56,7 +53,7 @@ function GDXN() {
           dataIndex: 'trangThai',
           key: 'trangThai',
           render: (text) => (
-            <Space className={cx('icon-lookup wait')}>
+            <Space className='icon-lookup wait'>
                 <FontAwesomeIcon icon={faCircle}/>
               {text}
             </Space>
@@ -68,9 +65,9 @@ function GDXN() {
           key: 'chucNang',
           width: '10%',
           render: () => (
-            <div className={cx('icon-funtion')}>
+            <div className='icon-funtion'>
               <FontAwesomeIcon icon={faEye} onClick={() => {handleFunctionClick('Chi tiết'); handleClick('Thêm')}} />
-              <FontAwesomeIcon icon={faTrashCan} onClick={() => {handleFunctionClick('Xoá');handleClick('xoá')}} className={cx('icon-funtion delete')}/>
+              <FontAwesomeIcon icon={faTrashCan} onClick={() => {handleFunctionClick('Xoá');handleClick('xoá')}} className='icon-funtion delete'/>
             </div>
           ),
           className: 'lookup-res',
@@ -187,22 +184,22 @@ function GDXN() {
         
           
         
-        <div className={cx('search')}>
-      <div className={cx('data-search')}>
+        <div className='search'>
+      <div className='data-search'>
         <b>Số chứng từ</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
           <Input placeholder="Nhập số chứng từ" />
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Ngày import</b>
         <DatePicker />
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Trạng thái</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
         <Select placeholder="Chọn trạng thái">
       {/* Thêm các Option khác nếu cần */}
       <Option value="1">Tài khoản 1</Option>
@@ -218,18 +215,18 @@ function GDXN() {
 
        
           <div className="a">
-            <div className={cx('result')}>
-            <div className={cx('result-plus')}>
+            <div className='result'>
+            <div className='result-plus'>
                 <div>
                     <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                    <b className={cx('result-number')}>28 kết quả</b>
+                    <b className='result-number'>28 kết quả</b>
                 </div>
                 <button
                 onClick={() => {handleFunctionClick('Thêm mới');handleClick('Thêm')}}
-                > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}/>Thêm mới</button>
+                > <FontAwesomeIcon icon={faPlus} className='icon-add'/>Thêm mới</button>
             </div>
             <Table
-                  className={cx('lookup-container')}
+                  className='lookup-container'
                   columns={columns}
                   dataSource={data}
                   pagination={false}
@@ -239,16 +236,16 @@ function GDXN() {
         <Next/>
 
         {modavisible && (
-                    <div className={cx('modal-overlay')}>
-                        <div className={cx('inner-modal')}>
-                            <div className={cx('result-modal')}>
+                    <div className='modal-overlay'>
+                        <div className='inner-modal'>
+                            <div className='result-modal'>
                                 <h1>{modalType}</h1>
 
                                 <div>
-                                    <div className={cx('wrap-modal')}>
-                                    <div className={cx('data-search')}>
+                                    <div className='wrap-modal'>
+                                    <div className='data-search'>
                                         <b>Tài khoản lưu ký chứng khoán</b>
-                                        <div className={cx('input-search')}>
+                                        <div className='input-search'>
                                         <Select placeholder="Chọn tài khoản">
                                             {/* Thêm các Option khác nếu cần */}
                                             <Option value="1">Tài khoản 1</Option>
@@ -257,8 +254,8 @@ function GDXN() {
                                                     
                                         </div>
                                     </div>
-                                    <div className={cx('file-modal')}>
-                                        <div className={cx('file-btn')}>
+                                    <div className='file-modal'>
+                                        <div className='file-btn'>
                                         <button className="dow-btn" >
                                             <FontAwesomeIcon icon={faFileLines}/>
                                             Tải file mẫu
@@ -267,7 +264,7 @@ function GDXN() {
 
                                         <Space>
                                             <Upload {...props}>
-                                                <button className={cx('select-btn')} >
+                                                <button className='select-btn' >
                                                     <FontAwesomeIcon icon={faDownload}/>
                                                 Chọn file
                                                 </button>
@@ -276,7 +273,7 @@ function GDXN() {
                                         </div>
                                     </div>
 
-                                    <h3 className={cx('infor')}>I. Thông tin file</h3>
+                                    <h3 className='infor'>I. Thông tin file</h3>
 
                                     
                                         <div  className="result">
@@ -285,10 +282,10 @@ function GDXN() {
                                     
                                     </div></div>
 
-                                    {selectedTitle && <div className={'modal-btn'}><button className={cx('confirm-modal')}
+                                    {selectedTitle && <div className={'modal-btn'}><button className='confirm-modal'
                                 onClick={() => setModavisible(false)}
                                 >Xác nhận</button></div>}
-                                {selectTitleDelete && <div className={'modal-btn'}><button className={cx('confirm-modall')}
+                                {selectTitleDelete && <div className={'modal-btn'}><button className='confirm-modall'
                                 onClick={() => setModavisible(false)}
                                 >Xác nhận xoá</button></div>}
 

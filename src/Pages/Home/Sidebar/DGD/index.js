@@ -1,16 +1,13 @@
 import {  faCheck, faCircle, faCircleCheck, faEye,  faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React  from "react";
-import classNames from "classnames/bind";
 import Button from "../Button";
 import Next from "../NextPage";
-import styles from './DGD.scss'
 import { Header } from "antd/lib/layout/layout";
 import {Select,DatePicker,Input, Table, Space} from 'antd'
 import { useState } from "react";
 
 
-const cx = classNames.bind(styles)
 const {Option} = Select
 
 
@@ -114,16 +111,16 @@ const columns = [
   
     return (
       <div >
-        <Header className={cx('title')}>
-          <FontAwesomeIcon icon={faCircleCheck} className={cx('icon-title')}/>
+        <Header className='title'>
+          <FontAwesomeIcon icon={faCircleCheck} className='icon-title'/>
           <h2>Duyệt giao dịch</h2>
         </Header>
           
         
-        <div className={cx('search')}>
-        <div className={cx('data-search')}>
+        <div className='search'>
+        <div className='data-search'>
               <b>Loại giao dịch</b>
-              <div className={cx('input-search')}>
+              <div className='input-search'>
                 <Select
                   className="input-search"
                   showSearch
@@ -140,9 +137,9 @@ const columns = [
               </div>
             </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Tài khoản lưu ký CK</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                     <Select
                   className="input-search"
                   showSearch
@@ -159,21 +156,21 @@ const columns = [
                     </div>
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Người tạo</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                       <Input placeholder="Nhập tên người tạo" className="border-input" />
                     </div>
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Ngày giao dịch</b>
                     <DatePicker />
                   </div>
 
-                  <div className={cx('data-search')}>
+                  <div className='data-search'>
                     <b>Mã CK</b>
-                    <div className={cx('input-search')}>
+                    <div className='input-search'>
                     <Select
                   className="input-search"
                   showSearch
@@ -200,11 +197,11 @@ const columns = [
 
        <div className="a">
          
-            <div className={cx('result')}>
-            <div className={cx('result-plus')}>
+            <div className='result'>
+            <div className='result-plus'>
                 <div>
                     <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                    <b className={cx('result-number')}>28 kết quả</b>
+                    <b className='result-number'>28 kết quả</b>
                 </div>
          
             </div>
@@ -214,15 +211,15 @@ const columns = [
         <Next/>
 
           {modavisible && (
-                    <div className={cx('modal-overlay')}>
-                        <div className={cx('inner-modal')}>
-                            <div className={cx('result-modal')}>
+                    <div className='modal-overlay'>
+                        <div className='inner-modal'>
+                            <div className='result-modal'>
                                 <h1>{modalType}</h1>
                                 <div>
                                     
-                                <div className={cx('data-search')}>
+                                <div className='data-search'>
                                         <b>Nơi yêu cầu ký gửi</b>
-                                        <div className={cx('input-search')}>
+                                        <div className='input-search'>
                                         <Select
                                          className="input-search"
                                             showSearch
@@ -356,10 +353,10 @@ const columns = [
       }
     </div>
                                 </div> 
-                               {selectedTitle && <div className={'modal-btn'}><button className={cx('confirm-modal')}
+                               {selectedTitle && <div className={'modal-btn'}><button className='confirm-modal'
                                 onClick={() => setModaVisible(false)}
                                 >Xác nhận</button></div> }
-                               {selectTitle && <div className={'modal-btnn'}><button className={cx('confirm-modall')}
+                               {selectTitle && <div className={'modal-btnn'}><button className='confirm-modall'
                                 onClick={() => setModaVisible(false)}
                                 > <FontAwesomeIcon icon={faX}/>Từ chối </button>
                                 <button className="confir-modall"><FontAwesomeIcon icon={faCheck}/>Duyệt</button>

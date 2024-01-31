@@ -1,14 +1,11 @@
 import {  faCircle, faEye, faPen, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import classNames from "classnames/bind";
 import Button from "../Button";
 import Next from "../NextPage";
-import styles from './GDR.scss'
 import { Input, DatePicker, Select ,Space, Table } from "antd";
 
 const {Option} = Select
-const cx = classNames.bind(styles)
 
 
 function GDR() {
@@ -81,7 +78,7 @@ function GDR() {
           dataIndex: 'status',
           key: 'status',
           render: (text) => (
-            <Space className={cx('icon-lookup', { 'wait': text === 'Chờ duyệt', 'refuse': text === 'Từ chối' })}>
+            <Space className={`icon-lookup ${text === 'Chờ duyệt' ? 'wait' : ''} ${text === 'Từ chối' ? 'refuse' : ''}`}>
               <FontAwesomeIcon icon={faCircle} />
               {text}
             </Space>
@@ -93,14 +90,14 @@ function GDR() {
           dataIndex: 'functions',
           key: 'functions',
           render: () => (
-            <div className={cx('icon-funtion')}>
+            <div className='icon-funtion'>
                             <FontAwesomeIcon icon={faEye} 
               onClick={() => {handleFunctionClick('Chi tiết');handleClick('Thêm')}}
               />
                             <FontAwesomeIcon icon={faPen}
               onClick={() => {handleFunctionClick('Cập nhật');handleClick('Sửa')}}
               />
-                            <FontAwesomeIcon icon={faTrashCan} className={cx('delete')}
+                            <FontAwesomeIcon icon={faTrashCan} className='delete'
               onClick={() => {handleFunctionClick('Xoá');handleClick('Xoá')}}
               />
     
@@ -153,10 +150,10 @@ function GDR() {
         
           
         
-        <div className={cx('search')}>
-        <div className={cx('data-search')}>
+        <div className='search'>
+        <div className='data-search'>
         <b>Tài khoản lưu ký chứng khoán</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
         <Select
                   className="input-search"
                   showSearch
@@ -173,9 +170,9 @@ function GDR() {
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Mã CK</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
         <Select
                   className="input-search"
                   showSearch
@@ -192,9 +189,9 @@ function GDR() {
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Loại giao dịch</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
         <Select
                   className="input-search"
                   showSearch
@@ -211,21 +208,21 @@ function GDR() {
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Ngày giao dịch</b>
         <DatePicker />
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Số chứng từ</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
           <Input placeholder="Nhập số chứng từ" />
         </div>
       </div>
 
-      <div className={cx('data-search')}>
+      <div className='data-search'>
         <b>Trạng thái</b>
-        <div className={cx('input-search')}>
+        <div className='input-search'>
         <Select
                   className="input-search"
                   showSearch
@@ -251,15 +248,15 @@ function GDR() {
 
        
           <div className="a">
-            <div className={cx('result')}>
-            <div className={cx('result-plus')}>
+            <div className='result'>
+            <div className='result-plus'>
                 <div>
                     <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                    <b className={cx('result-number')}>28 kết quả</b>
+                    <b className='result-number'>28 kết quả</b>
                 </div>
                 <button
                 onClick={() => {handleFunctionClick('Đăng kí mua CK phát hành thêm');}}
-                > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}
+                > <FontAwesomeIcon icon={faPlus} className='icon-add'
                 />Thêm mới</button>
             </div>
             <Table columns={columns} dataSource={data} pagination={false}/>
@@ -268,15 +265,15 @@ function GDR() {
         <Next/>
 
           {modavisible && (
-                    <div className={cx('modal-overlay')}>
-                        <div className={cx('inner-modal')}>
-                            <div className={cx('result-modal')}>
+                    <div className='modal-overlay'>
+                        <div className='inner-modal'>
+                            <div className='result-modal'>
                                 <h1>{modalType}</h1>
                                 <div>
                                     
-                                <div className={cx('data-search')}>
+                                <div className='data-search'>
                                         <b>Nơi yêu cầu ký gửi</b>
-                                        <div className={cx('input-search')}>
+                                        <div className='input-search'>
                                         <Select
                                          className="input-search"
                                             showSearch
@@ -410,13 +407,13 @@ function GDR() {
       }
     </div>
                                 </div> 
-                                {selectedTitle && <div className={'modal-btn'}><button className={cx('confirm-modal')}
+                                {selectedTitle && <div className={'modal-btn'}><button className='confirm-modal'
                                 onClick={() => setModaVisible(false)}
                                 >Xác nhận</button></div>}
-                                {selectTitle && <div className={'modal-btn'}><button className={cx('confirm-modal')}
+                                {selectTitle && <div className={'modal-btn'}><button className='confirm-modal'
                                 onClick={() => setModaVisible(false)}
                                 >Lưu</button></div>}
-                                {selectTitleDelete && <div className={'modal-btn'}><button className={cx('confirm-modall')}
+                                {selectTitleDelete && <div className={'modal-btn'}><button className='confirm-modall'
                                 onClick={() => setModaVisible(false)}
                                 >Xác nhận xoá</button></div>}
                                 </div></div></div>)}

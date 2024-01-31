@@ -1,14 +1,11 @@
 import {  faCircle, faEye, faPen, faPlus, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import classNames from "classnames/bind";
 import Button from "../Button";
 import Next from "../NextPage";
-import styles from './GDDK.scss'
 import { Input, Select,DatePicker,Space,Table } from "antd";
 
 const {Option} = Select
-const cx = classNames.bind(styles)
 
 
   
@@ -90,7 +87,8 @@ function GDDK() {
           dataIndex: 'status',
           key: 'status',
           render: (text) => (
-            <Space className={cx('icon-lookup', { 'wait': text === 'Chờ duyệt', 'refuse': text === 'Từ chối' })}>
+            <Space className={`icon-lookup ${text === 'Chờ duyệt' ? 'wait' : ''} ${text === 'Từ chối' ? 'refuse' : ''}`}
+            >
               <FontAwesomeIcon icon={faCircle} />
               {text}
             </Space>
@@ -102,14 +100,14 @@ function GDDK() {
           dataIndex: 'functions',
           key: 'functions',
           render: () => (
-            <div className={cx('icon-funtion')}>
+            <div className='icon-funtion'>
                             <FontAwesomeIcon icon={faEye} 
               onClick={() => {handleFunctionClick('Chi tiết');handleClick('Thêm')}}
               />
                             <FontAwesomeIcon icon={faPen}
               onClick={() => {handleFunctionClick('Cập nhật');handleClick('Sửa')}}
               />
-                            <FontAwesomeIcon icon={faTrashCan} className={cx('delete')}
+                            <FontAwesomeIcon icon={faTrashCan} className='delete'
               onClick={() => {handleFunctionClick('Xoá');handleClick('Xoá')}}
               />
     
@@ -152,10 +150,10 @@ function GDDK() {
         
           
         
-        <div className={cx('search')}>
-        <div className={cx('data-search')}>
+        <div className='search'>
+        <div className='data-search'>
   <b>Tài khoản lưu ký chứng khoán</b>
-  <div className={cx('input-search')}>
+  <div className='input-search'>
     <Select placeholder="Chọn tài khoản">
       {/* Thêm các Option khác nếu cần */}
       <Option value="1">Tài khoản 1</Option>
@@ -164,16 +162,16 @@ function GDDK() {
   </div>
 </div>
 
-<div className={cx('data-search')}>
+<div className='data-search'>
   <b>Số chứng từ</b>
-  <div className={cx('input-search')}>
+  <div className='input-search'>
     <Input placeholder="Chọn tài khoản" className="border-input"/>
   </div>
 </div>
 
-<div className={cx('data-search')}>
+<div className='data-search'>
   <b>Mã CK</b>
-  <div className={cx('input-search')}>
+  <div className='input-search'>
     <Select placeholder="Chọn mã CK">
       {/* Thêm các Option khác nếu cần */}
       <Option value="code1">Mã CK 1</Option>
@@ -182,14 +180,14 @@ function GDDK() {
   </div>
 </div>
 
-<div className={cx('data-search')}>
+<div className='data-search'>
   <b>Ngày giao dịch</b>
   <DatePicker />
 </div>
 
-<div className={cx('data-search')}>
+<div className='data-search'>
   <b>Trạng thái</b>
-  <div className={cx('input-search')}>
+  <div className='input-search'>
   <Select placeholder="Chọn trạng thái">
       {/* Thêm các Option khác nếu cần */}
       <Option value="status1">Trạng thái 1</Option>
@@ -207,15 +205,15 @@ function GDDK() {
 
        
           <div className="a">
-            <div className={cx('result')}>
-            <div className={cx('result-plus')}>
+            <div className='result'>
+            <div className='result-plus'>
                 <div>
                     <FontAwesomeIcon icon={faCircle} className="icon-result"/>
-                    <b className={cx('result-number')}>28 kết quả</b>
+                    <b className='result-number'>28 kết quả</b>
                 </div>
                 <button
                 onClick={() => {handleFunctionClick('Đăng kí mua CK phát hành thêm');}}
-                > <FontAwesomeIcon icon={faPlus} className={cx('icon-add')}
+                > <FontAwesomeIcon icon={faPlus} className='icon-add'
                 />Thêm mới</button>
             </div>
             <Table columns={columns} dataSource={data} pagination={false}/>
@@ -224,16 +222,16 @@ function GDDK() {
         <Next/>
 
         {modavisible && (
-                    <div className={cx('modal-overlay')}>
-                        <div className={cx('inner-modal')}>
-                            <div className={cx('result-modal')}>
+                    <div className='modal-overlay'>
+                        <div className='inner-modal'>
+                            <div className='result-modal'>
                                 <h1>{modavisible}</h1>
 
                                 <div>
       <div>
-        <h3 className={cx('infor')}>I. Thông tin người dùng</h3>
-        <div className={cx('wrap-modal')}>
-          <div className={cx('data-search')}>
+        <h3 className='infor'>I. Thông tin người dùng</h3>
+        <div className='wrap-modal'>
+          <div className='data-search'>
             <b>Tài khoản lưu ký chứng khoán</b>
             <div >
             <Select
@@ -251,30 +249,30 @@ function GDDK() {
                 </Select>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Tên khách hàng</b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input placeholder="Nhập tên KH" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Địa chỉ</b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input placeholder="Nhập địa chỉ" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Ngày giao dịch</b>
             <DatePicker />
           </div>
         </div>
       </div>
       <div>
-        <h3 className={cx('infor')}>II. Thông tin đợt THQ</h3>
-        <div className={cx('wrap-modal')}>
-          <div className={cx('data-search')}>
+        <h3 className='infor'>II. Thông tin đợt THQ</h3>
+        <div className='wrap-modal'>
+          <div className='data-search'>
             <b>Mã đợt THQ</b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
             <Select
                   className="input-search"
                   showSearch
@@ -290,72 +288,72 @@ function GDDK() {
                 </Select>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Tên đợt THQ</b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input placeholder="Nhập tên đợt THQ" className="border-input" />
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Mã CK</b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input placeholder="Nhập mã CK" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Ngày DKCC</b>
             <DatePicker />
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Ngày hết hạn đăng kí mua</b>
             <Input type="text" placeholder="Chọn ngày hết hạn" className="border-input"/>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Tỉ lệ </b>
             <Input type="text" placeholder="Nhập tỉ lệ" className="border-input"/>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Giá mua </b>
             <Input type="text" placeholder="0" className="border-input"/>
           </div>
         </div>
       </div>
       <div>
-        <h3 className={cx('infor')}>III. Thông tin người dùng</h3>
-        <div className={cx('wrap-modal')}>
-          <div className={cx('data-search')}>
+        <h3 className='infor'>III. Thông tin người dùng</h3>
+        <div className='wrap-modal'>
+          <div className='data-search'>
             <b>SL quyền sở hữu </b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input type="text" placeholder="0" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>SL đã nộp tiền </b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input type="text" placeholder="0" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>SL quyền đăng kí </b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input type="text" placeholder="0" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>SL CK đăng kí mua </b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input type="text" placeholder="0" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Số tiền phải nộp </b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input type="text" placeholder="0" className="border-input"/>
             </div>
           </div>
-          <div className={cx('data-search')}>
+          <div className='data-search'>
             <b>Ghi chú </b>
-            <div className={cx('input-search')}>
+            <div className='input-search'>
               <Input type="text" placeholder="Nhập ghi chú" className="border-input"/>
             </div>
           </div>
@@ -364,13 +362,13 @@ function GDDK() {
     </div>
   
 
-                                {selectedTitle && <div className={'modal-btn'}><button className={cx('confirm-modal')}
+                                {selectedTitle && <div className={'modal-btn'}><button className='confirm-modal'
                                 onClick={() => setModavisible(false)}
                                 >Xác nhận</button></div>}
-                                {selectTitle && <div className={'modal-btn'}><button className={cx('confirm-modal')}
+                                {selectTitle && <div className='modal-btn'><button className='confirm-modal'
                                 onClick={() => setModavisible(false)}
                                 >Lưu</button></div>}
-                                {selectTitleDelete && <div className={'modal-btn'}><button className={cx('confirm-modall')}
+                                {selectTitleDelete && <div className='modal-btn'><button className='confirm-modall'
                                 onClick={() => setModavisible(false)}
                                 >Xác nhận xoá</button></div>}
 
